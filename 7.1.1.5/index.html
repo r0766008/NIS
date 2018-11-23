@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netacad Is Stuk</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" id="landscape" href="landscape.css" media="(orientation: landscape)">
+    <link rel="stylesheet" id="portrait" href="portrait.css" media="(orientation: portrait)">
+
+</head>
+
+<body>
+    <h1>Netacad Is Stuk: 7.1.1.5</h1>
+    <button class="tableStyle" disabled>Dynamic</button>
+    <button class="tableStyle">Landscape</button>
+    <button class="tableStyle">Portrait</button>
+
+    <br><br>
+
+    <button class="mode" disabled>Calculator</button>
+    <button class="mode">Practice</button>
+
+    <br><br>
+
+    <div class="table">
+        <div class="titles">
+            <span>Decimal value</span>
+            <span>Base</span>
+            <span>Exponent</span>
+            <span>Position</span>
+            <span>Bit</span>
+        </div>
+        <div class="values">
+            <div class="dark">
+                <input id="decimalValue" type="number" min="0">
+                <button class="divide" style="visibility: hidden;">0</button>
+            </div>
+            <div class="light">
+                <span>2</span>
+                <span>2</span>
+                <span>2</span>
+                <span>2</span>
+                <span>2</span>
+                <span>2</span>
+                <span>2</span>
+                <span>2</span>
+
+                <span class="divide">2</span>
+            </div>
+            <div class="dark">
+                <span>7</span>
+                <span>6</span>
+                <span>5</span>
+                <span>4</span>
+                <span>3</span>
+                <span>2</span>
+                <span>1</span>
+                <span>0</span>
+
+                <span class="divide">8</span>
+            </div>
+
+            <div class="light">
+                <span>128</span>
+                <span>64</span>
+                <span>32</span>
+                <span>16</span>
+                <span>8</span>
+                <span>4</span>
+                <span>2</span>
+                <span>1</span>
+
+                <span class="divide">256</span>
+            </div>
+
+            <div class="dark">
+                <button class="bit" value="128">0</button>
+                <button class="bit" value="64">0</button>
+                <button class="bit" value="32">0</button>
+                <button class="bit" value="16">0</button>
+                <button class="bit" value="8">0</button>
+                <button class="bit" value="4">0</button>
+                <button class="bit" value="2">0</button>
+                <button class="bit" value="1">0</button>
+                <button class="divide" style="visibility: hidden;">0</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <button id="answer">Check answer</button>
+    
+    <script id="calculator" src="calculator.js" disabled></script>
+    <script id="practice" src="practice.js" disabled></script>
+    <script src="functions.js"></script>
+</body>
+
+</html>
