@@ -2,6 +2,7 @@ function SetupCalculator() {
     Reset();
 
     var decimalValue = document.getElementById("decimalValue");
+    decimalValue.disabled = false;
     decimalValue.removeEventListener("input", CalculateBits); // TODO
     decimalValue.addEventListener("input", CalculateBits);
 
