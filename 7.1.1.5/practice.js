@@ -72,7 +72,8 @@ function GiveBitsAskDecimal() {
 
 // Function goal: change the value of a bit from 0 to 1 or vica versa
 function ChangeBitPractice(e) {
-    var bit = e.srcElement;
+    var bit = e.srcElement;  // Get the clicked bit
+    // Check the bits' value, and change it accordingly
     if (bit.innerHTML == "0") bit.innerHTML = "1";
     else bit.innerHTML = "0";
 }
