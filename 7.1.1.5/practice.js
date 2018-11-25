@@ -15,6 +15,9 @@ function NewExercise() {
     // and by default, do not allow the user to modify the decimal value
     decimalValue.disabled = true;
 
+    // Show the checkAnswer button
+    document.getElementById("checkAnswer").style.display = "initial";
+
     var bits = document.getElementsByClassName("bit");
     for (var i = 0; i < bits.length; i++) {
         var bit = bits[i];
@@ -42,7 +45,7 @@ function GiveDecimalAskBits() {
     for (var i = 0; i < bits.length; i++)
         bits[i].disabled = false;
 
-    var checkAnswer = document.getElementById("answer");
+    var checkAnswer = document.getElementById("checkAnswer");
     // Make sure the CheckAnswer button doesn't check the decimal value
     checkAnswer.removeEventListener("click", CheckAskedDecimalValue);
     // Set the CheckAnswer button to check the asked bit value
@@ -60,7 +63,7 @@ function GiveBitsAskDecimal() {
     // When bits are given, allow user to modify decimal value
     document.getElementById("decimalValue").disabled = false;
 
-    var checkAnswer = document.getElementById("answer");
+    var checkAnswer = document.getElementById("checkAnswer");
     // Make sure the CheckAnswer button doesn't check the bit value
     checkAnswer.removeEventListener("click", CheckAskedBits);
     // Set the CheckAnswer button to check the asked decimal value
@@ -97,12 +100,12 @@ function CheckAskedBits() {
             correctValue -= bitValue;  // - subtract it -
             correctBits += "1";  // and add a 1 to the correct bit value
         }
-         // If it cannot be subtracted, add a 0 to the correct bit value
+        // If it cannot be subtracted, add a 0 to the correct bit value
         else correctBits += "0";
 
         // Add a 0 or 1 (depending on user input) to the user bit value
         userBits += bit.innerHTML;
-        if (bit.innerHTML == "1") userValue += bitValue; 
+        if (bit.innerHTML == "1") userValue += bitValue;
     }
 
     // If the correct bit value equals what the user entered,

@@ -10,6 +10,9 @@ function SetupCalculator() {
     // When the decimal value is changed, call CalculateBits
     decimalValue.addEventListener("input", CalculateBits);
 
+    // Hide the checkAnswer button
+    document.getElementById("checkAnswer").style.display = "none";
+
     var bits = document.getElementsByClassName("bit");
     for (var i = 0; i < bits.length; i++) {
         var bit = bits[i];
