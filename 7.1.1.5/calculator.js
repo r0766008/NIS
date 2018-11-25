@@ -7,8 +7,10 @@ function SetupCalculator() {
 
     var bits = document.getElementsByClassName("bit");
     for (var i = 0; i < bits.length; i++) {
-        bits[i].onclick = "";
-        bits[i].addEventListener("click", ChangeBit);
+        var bit = bits[i];
+        bit.disabled = false;
+        bit.removeEventListener("click", ChangeBitPractice);
+        bit.addEventListener("click", ChangeBit);
     }
 }
 

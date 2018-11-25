@@ -13,8 +13,12 @@ function NewExercise() {
     decimalValue.disabled = true;
 
     var bits = document.getElementsByClassName("bit");
-    for (var i = 0; i < bits.length; i++) bits[i].disabled = true;
-    // No need to remove ChangeBit since it gets overridden below
+    for (var i = 0; i < bits.length; i++) {
+        var bit = bits[i];
+        bit.disabled = true;
+        bit.removeEventListener("click", ChangeBit);
+        bit.addEventListener("click", ChangeBitPractice);
+    }
 
     if (random(0, 2) == 0) GiveDecimalAskBits();
     else GiveBitsAskDecimal();
@@ -50,7 +54,7 @@ function GiveBitsAskDecimal() {
     checkAnswer.addEventListener("click", CheckAskedDecimalValue);
 }
 
-function ChangeBit(e) {
+function ChangeBitPractice(e) {
     var bit = e.srcElement;
     if (bit.innerHTML == "0") bit.innerHTML = "1";
     else bit.innerHTML = "0";
