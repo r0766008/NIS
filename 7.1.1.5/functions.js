@@ -120,21 +120,29 @@ function ChangeMode(e) {
 // On success, return true. On fail, return false
 function GetPreferences() {
     try {
+        // Get the value of the to-press-button from localStorage
         var tableStyle = localStorage.getItem("tableStyle")
         var mode = localStorage.getItem("mode");
+
+        // Trigger the click event of the button that has that value
         document.querySelector(".tableStyle[value=" + tableStyle + "]").click();
         document.querySelector(".mode[value=" + mode + "]").click();
+
+        // If the code got this far, everything went well. Return true. -
         return true;
     }
     catch {
+        // - Else, return false
         return false;
     }
 }
 
 // Function goal: save the user preferences to localStorage
 function SavePreferences() {
+    // Get the currently disabled (and thus selected) tableStyle and mode button
     var tableStyle = document.querySelector(".tableStyle[disabled]").value;
     var mode = document.querySelector(".mode[disabled]").value;
+    // Save their values to localStorage
     localStorage.setItem("tableStyle", tableStyle);
     localStorage.setItem("mode", mode);
 }
