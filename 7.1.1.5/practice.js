@@ -71,17 +71,14 @@ function CheckAskedBits() {
     for (var i = 0; i < bits.length; i++) {
         var bit = bits[i];
         var bitValue = parseInt(bit.value);
+
         if (correctValue - bitValue >= 0) {
             correctValue -= bitValue;
             correctBits += "1";
         } else correctBits += "0";
-    }
 
-    for (var i = 0; i < bits.length; i++) {
-        var bit = bits[i];
         userBits += bit.innerHTML;
-
-        if (bit.value == "1") userValue += parseInt(bit.value);
+        if (bit.innerHTML == "1") userValue += bitValue; 
     }
 
     if (correctBits == userBits) alert("Correct!");
