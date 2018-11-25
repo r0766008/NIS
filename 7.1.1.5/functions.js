@@ -12,10 +12,21 @@ function UISetup() {
     var modes = document.getElementsByClassName("mode");
     for (var i = 0; i < modes.length; i++)
         modes[i].addEventListener("click", ChangeMode);
+
     
-    // This function is called after everything has been loaded in.
-    // At this point, setup the default mode (calculator) to make the table usable
-    SetupCalculator();  // Calculator is default mode
+    // This function is called after everything has been loaded in. At
+    // this point, set the tablestyle and mode to what the user had before
+
+    // However, if GetPreferences returns false, something went wrong
+    // whilst fetching from localStorage. This presumably means that the
+    // user hasn't been on this page before. If so, setup the default mode
+    // (calculator) to make the table usable
+
+    // (tableStyle doesn't need a fallback, as it will
+    //  default to dynamic due to how the HTML is coded)
+    if (!GetPreferences()) {
+        SetupCalculator();  // Calculator is default mode
+    }
 }
 
 // Function goal: set decimal value and bits to 0
@@ -40,7 +51,7 @@ function ChangeTableStyle(e) {
     var portrait = document.getElementById("portrait");
     var landscape = document.getElementById("landscape");
 
-    switch (selectedTableStyle.innerHTML.toLowerCase()) {
+    switch (selectedTableStyle.value) {
         // If dynamic is selected -
         case "dynamic":
             // - enable the CSS for portrait and landscape -
@@ -66,6 +77,9 @@ function ChangeTableStyle(e) {
             portrait.media = "";
             break;
     }
+
+    // After changing the preferred tableStyle, save that tableStyle to preferences
+    SavePreferences();
 }
 
 // Function goal: allow the user to switch between calculator and practice mode
@@ -78,7 +92,7 @@ function ChangeMode(e) {
     // - and disable the button of the currently selected mode
     e.srcElement.disabled = true;
 
-    switch (e.srcElement.innerHTML.toLowerCase()) {
+    switch (e.srcElement.value) {
         // If the calculator button has been pressed -
         case "calculator":
             // - setup calculator, which allows the user to
@@ -96,8 +110,33 @@ function ChangeMode(e) {
             NewExercise();
             break;
     }
+
+    // Save the last mode the user was using in localStorage
+    SavePreferences();
 }
 
-// TODO localstorage preferences
+// Function goal: get the user preferences from localstorage,
+// and apply them by triggering the button click events.
+// On success, return true. On fail, return false
+function GetPreferences() {
+    try {
+        var tableStyle = localStorage.getItem("tableStyle")
+        var mode = localStorage.getItem("mode");
+        document.querySelector(".tableStyle[value=" + tableStyle + "]").click();
+        document.querySelector(".mode[value=" + mode + "]").click();
+        return true;
+    }
+    catch {
+        return false;
+    }
+}
+
+// Function goal: save the user preferences to localStorage
+function SavePreferences() {
+    var tableStyle = document.querySelector(".tableStyle[disabled]").value;
+    var mode = document.querySelector(".mode[disabled]").value;
+    localStorage.setItem("tableStyle", tableStyle);
+    localStorage.setItem("mode", mode);
+}
 
 UISetup();
