@@ -23,19 +23,19 @@
         </div>
     </nav>
     <br><br>
-    <h1 class="title center">Binary to Decimal Conversion Activity (7.1.1.5)</h1>
+    <h1 class="title center">Decimal to Binary Conversion Activity (7.1.1.7)</h1>
     <br>
     <div class="center">
-        <button class="waves-effect waves-light btn tableStyle" value="dynamic" disabled>Dynamic</button>
-        <button class="waves-effect waves-light btn teal lighten-4 tableStyle" value="landscape">Landscape</button>
-        <button class="waves-effect waves-light btn teal lighten-4 tableStyle" value="portrait">Portrait</button>
+        <button class="waves-effect waves-light btn tableStyle" disabled>Dynamic</button>
+        <button class="waves-effect waves-light btn teal lighten-4 tableStyle">Landscape</button>
+        <button class="waves-effect waves-light btn teal lighten-4 tableStyle">Portrait</button>
     </div>
 
     <br>
 
     <div class="center">
-        <button class="waves-effect waves-light btn mode" value="calculator" disabled>Calculator</button>
-        <button class="waves-effect waves-light btn teal lighten-4 mode" value="practice">Practice</button>
+        <button class="waves-effect waves-light btn mode" disabled>Calculator</button>
+        <button class="waves-effect waves-light btn teal lighten-4 mode">Practice</button>
     </div>
     <br>
     
@@ -46,7 +46,7 @@
                 <p class="right">Decimal Value</p>
             </div>
             <div class="col s8">
-                <input id="decimalValue" type="number" min="0" max="255">
+                <input id="decimalValue" type="number" min="0" max="255" disabled>
             </div>
         </div>
         <div class="row">
@@ -98,14 +98,14 @@
                 <p class="right">Bit</p>
             </div>
             <div class="dark">
-                <button class="col s1 center bit" value="128" disabled>0</button>
-                <button class="col s1 center bit" value="64" disabled>0</button>
-                <button class="col s1 center bit" value="32" disabled>0</button>
-                <button class="col s1 center bit" value="16" disabled>0</button>
-                <button class="col s1 center bit" value="8" disabled>0</button>
-                <button class="col s1 center bit" value="4" disabled>0</button>
-                <button class="col s1 center bit" value="2" disabled>0</button>
-                <button class="col s1 center bit" value="1" disabled>0</button>
+                <button class="col s1 center bit" value="128">0</button>
+                <button class="col s1 center bit" value="64">0</button>
+                <button class="col s1 center bit" value="32">0</button>
+                <button class="col s1 center bit" value="16">0</button>
+                <button class="col s1 center bit" value="8">0</button>
+                <button class="col s1 center bit" value="4">0</button>
+                <button class="col s1 center bit" value="2">0</button>
+                <button class="col s1 center bit" value="1">0</button>
             </div>
         </div>
     </div>
@@ -120,61 +120,61 @@
             <p class="col s2 center">Bit</p>
         </div>
         <div class="row">
-            <input class="col offset-s1 s2" id="decimalValueClone" type="number" min="0" max="255">
+            <input class="col offset-s1 s2" id="decimalValueClone" type="number" min="0" max="255" disabled>
             <span class="col s2 center">2</span>
             <span class="col s2 center">7</span>
             <span class="col s2 center">128</span>
-            <button class="col s2 center bit" value="128" disabled>0</button>
+            <button class="col s2 center bit" value="128">0</button>
         </div>
         <div class="row">
             <span class="col offset-s3 s2 center">2</span>
             <span class="col s2 center">6</span>
             <span class="col s2 center">64</span>
-            <button class="col s2 center bit" value="64" disabled>0</button>
+            <button class="col s2 center bit" value="64">0</button>
         </div>
 
         <div class="row">
             <span class="col offset-s3 s2 center">2</span>
             <span class="col s2 center">5</span>
             <span class="col s2 center">32</span>
-            <button class="col s2 center bit" value="32" disabled>0</button>
+            <button class="col s2 center bit" value="32">0</button>
         </div>
         <div class="row">
             <span class="col offset-s3 s2 center">2</span>
             <span class="col s2 center">4</span>
             <span class="col s2 center">16</span>
-            <button class="col s2 center bit" value="16" disabled>0</button>
+            <button class="col s2 center bit" value="16">0</button>
         </div>
         <div class="row">
             <span class="col offset-s3 s2 center">2</span>
             <span class="col s2 center">3</span>
             <span class="col s2 center">8</span>
-            <button class="col s2 center bit" value="8" disabled>0</button>
+            <button class="col s2 center bit" value="8">0</button>
         </div>
         <div class="row">
             <span class="col offset-s3 s2 center">2</span>
             <span class="col s2 center">2</span>
             <span class="col s2 center">4</span>
-            <button class="col s2 center bit" value="4" disabled>0</button>
+            <button class="col s2 center bit" value="4">0</button>
         </div>
         <div class="row">
             <span class="col offset-s3 s2 center">2</span>
             <span class="col s2 center">1</span>
             <span class="col s2 center">2</span>
-            <button class="col s2 center bit" value="2" disabled>0</button>
+            <button class="col s2 center bit" value="2">0</button>
         </div>
         <div class="row">
             <span class="col offset-s3 s2  center">2</span>
             <span class="col s2 center">0</span>
             <span class="col s2 center">1</span>
-            <button class="col s2 center bit" value="1" disabled>0</button>
+            <button class="col s2 center bit" value="1">0</button>
         </div>
     </div>
     
     <br><br>
     
     <div class="center">
-        <button class="waves-effect waves-light btn" id="checkAnswer">Check answer<i class="material-icons right">send</i></button>
+        <button class="waves-effect waves-light btn" id="answer">Check answer<i class="material-icons right">send</i></button>
     </div>
     <br><br>
     <footer class="page-footer purple lighten-3">
@@ -187,8 +187,8 @@
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#">7.1.1.5</a></li>
-                        <li><a class="grey-text text-lighten-3" href="../7.1.1.8/index.html">7.1.1.8</a></li>
+                        <li><a class="grey-text text-lighten-3" href="7.1.1.5/index.html">7.1.1.5</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">7.1.1.8</a></li>
                     </ul>
                 </div>
             </div>
@@ -199,8 +199,8 @@
             </div>
         </div>
     </footer>
-    <script id="calculator" src="js/calculator.js"></script>
-    <script id="practice" src="js/practice.js"></script>
+    <script id="calculator" src="js/calculator.js" disabled></script>
+    <script id="practice" src="js/practice.js" disabled></script>
     <script src="js/functions.js"></script>
 </body>
 
