@@ -54,18 +54,11 @@ function ChangeMode(e) {
 
     e.srcElement.disabled = true;
 
-    var calculator = document.getElementById("calculator");
-    var practice = document.getElementById("practice");
-
     switch (e.srcElement.innerHTML.toLowerCase()) {
         case "calculator":
-            calculator.disabled = true;
-            practice.disabled = false;
             SetupCalculator();
             break;
         case "practice":
-            practice.disabled = true;
-            calculator.disabled = false;
             NewExercise();
             break;
     }
